@@ -11,6 +11,7 @@ struct AnswerScreen: View {
     
     @State var dotProduct: Int
     @State var crossProduct: [Int]
+
     
     var body: some View {
                 
@@ -23,6 +24,10 @@ struct AnswerScreen: View {
             .font(.custom("Georgia", size: 20, relativeTo: .headline))
             .multilineTextAlignment(.center)
         
+        Text(String(dotProduct))
+            .font(.custom("Georgia", size: 20, relativeTo: .headline))
+            .multilineTextAlignment(.center)
+        
         Spacer()
         
         Text("Cross Product")
@@ -30,6 +35,10 @@ struct AnswerScreen: View {
             .multilineTextAlignment(.center)
         
         Text("Answer: ")
+            .font(.custom("Georgia", size: 20, relativeTo: .headline))
+            .multilineTextAlignment(.center)
+        
+        Text("<\(crossProduct[0]), \(crossProduct[1]), \(crossProduct[2])>")
             .font(.custom("Georgia", size: 20, relativeTo: .headline))
             .multilineTextAlignment(.center)
         

@@ -117,24 +117,37 @@ struct ContentView: View {
         .padding()
     }
     
-    func crossProduct(x1: String, y1: String, z1: String, x2: String, y2: String, z2: String)->Int{
+    func dotProduct(x1: String, y1: String, z1: String, x2: String, y2: String, z2: String)->Int{
         
+        //finish guard statement
+        //guard let IntX1 = Int(x1) || IntY1 = Int(y1)
         
+        let intX1 = Int(x1) ?? 0
+        let intY1 = Int(y1) ?? 0
+        let intZ1 = Int(z1) ?? 0
+        let intX2 = Int(x2) ?? 0
+        let intY2 = Int(y2) ?? 0
+        let intZ2 = Int(z2) ?? 0
         
-        return (x1 * x2) + (y1 * y2) + (z1 * z2)
+        return (intX1 * intX2) + (intY1 * intY2) + (intZ1 * intZ2)
     }
     
-    func dotProduct(x1: String, y1: String, z1: String, x2: String, y2: String, z2: String)->[Int]{
+    func crossProduct(x1: String, y1: String, z1: String, x2: String, y2: String, z2: String)->[Int]{
         
+        let intX1 = Int(x1) ?? 0
+        let intY1 = Int(y1) ?? 0
+        let intZ1 = Int(z1) ?? 0
+        let intX2 = Int(x2) ?? 0
+        let intY2 = Int(y2) ?? 0
+        let intZ2 = Int(z2) ?? 0
         
+        let i = (intY1 * intZ2) - (intY2 * intZ1)
         
-        let i = (y1 * z2) - (y2 * z1)
+        let j = (intX1 * intZ2) - (intX2 * intZ1)
         
-        let j = (x1 * z2) - (x2 * z1)
+        let k = (intX1 * intY2) - (intX2 * intY1)
         
-        let k = (x1 * y2) - (x2 * y1)
-        
-        return [i, j, k]
+        return [i, -j, k]
     }
 
 }
